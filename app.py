@@ -3,6 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
 
 app = FastAPI(title="Job Market Skill Gap API")
+@app.get("/")
+def root():
+    return {"message": "Backend is running!"}
 
 # Allow frontend to call the API
 app.add_middleware(
